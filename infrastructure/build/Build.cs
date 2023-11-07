@@ -19,6 +19,7 @@ using static Nuke.Common.IO.PathConstruction;
     //On = new[] { GitHubActionsTrigger.Push },
     OnPushBranches = new[] { "master" },
     OnPullRequestBranches = new[] { "master" },
+    OnWorkflowDispatchOptionalInputs = new[] { "master" },
     InvokedTargets = new[] { nameof(Compile) })]
 class Build : NukeBuild
 {
