@@ -20,7 +20,8 @@ using static Nuke.Common.IO.PathConstruction;
     OnPushBranches = new[] { "main" },
     OnPullRequestBranches = new[] { "main" },
     OnWorkflowDispatchOptionalInputs = new string[] {},
-    InvokedTargets = new[] { nameof(Compile) })]
+    InvokedTargets = new[] { nameof(Compile) },
+    AutoGenerate = false)]
 class Build : NukeBuild
 {
     /// Support plugins are available for:
