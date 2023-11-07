@@ -19,15 +19,11 @@ name: continuous
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   workflow_dispatch:
-    inputs:
-      master:
-        description: "master"
-        required: false
 
 jobs:
   ubuntu-latest:
@@ -44,5 +40,3 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj', '**/Directory.Packages.props') }}
       - name: 'Run: Compile'
         run: ./build.cmd Compile
-        env:
-          master: ${{ github.event.inputs.master }}
