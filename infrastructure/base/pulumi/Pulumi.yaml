@@ -1,0 +1,6 @@
+name: cistilec.base.infrastructure
+runtime: dotnet
+description: base Azure infrastructure for cistilec app
+config:
+  azure-native:region: westeurope 
+  azure-native:subscriptionId: d0f36a26-d10f-4b60-8bc9-05b8087c19b2

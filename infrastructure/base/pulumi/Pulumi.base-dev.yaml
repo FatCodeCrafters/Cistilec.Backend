@@ -1,0 +1,4 @@
+config:
+  cistilec.base.infrastructure:environment: dev
+  cistilec.base.infrastructure:tags:
+    contact: customer@cistilec.hr

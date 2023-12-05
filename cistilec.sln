@@ -9,8 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "build", "infrastructure\bui
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0BD4E3DA-6798-4E88-A442-B44505F5AA55}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		GitVersion.yml = GitVersion.yml
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "base", "base", "{E70224D7-1634-4666-B6B0-37642D2EDD67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cistilec.base.infrastructure", "infrastructure\base\pulumi\cistilec.base.infrastructure.csproj", "{A3360B67-AE52-40B6-99E5-465111FECE70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,12 +28,18 @@ Global
 		{AF827627-D3FE-41B3-A1CE-DD2D50BE9C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF827627-D3FE-41B3-A1CE-DD2D50BE9C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF827627-D3FE-41B3-A1CE-DD2D50BE9C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3360B67-AE52-40B6-99E5-465111FECE70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3360B67-AE52-40B6-99E5-465111FECE70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3360B67-AE52-40B6-99E5-465111FECE70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3360B67-AE52-40B6-99E5-465111FECE70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AF827627-D3FE-41B3-A1CE-DD2D50BE9C9F} = {EEDCEBBB-4609-4769-BB77-7F96CC11D233}
+		{E70224D7-1634-4666-B6B0-37642D2EDD67} = {EEDCEBBB-4609-4769-BB77-7F96CC11D233}
+		{A3360B67-AE52-40B6-99E5-465111FECE70} = {E70224D7-1634-4666-B6B0-37642D2EDD67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {55DFD1D9-7C03-4351-971D-573D93D301E0}
