@@ -75,6 +75,7 @@
               "Clean",
               "Compile",
               "Print",
+              "ProvisionInfra",
               "Restore"
             ]
           }
@@ -88,6 +89,7 @@
               "Clean",
               "Compile",
               "Print",
+              "ProvisionInfra",
               "Restore"
             ]
           }
