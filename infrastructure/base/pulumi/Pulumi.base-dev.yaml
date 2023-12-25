@@ -1,5 +1,7 @@
 config:
   cistilec.base.infrastructure:environment: dev
+  cistilec.base.infrastructure:pulumiTokenForRepository:
+    secure: AAABADE/VWx+nV7ROjP9+Dc5iDe9PbZK5KqrPcNmJLF4ROZ1m7NDF4svqM3DwHZPjlVagTm3mAZEgL0HQfeaWl+h+WOID87g8Gu9xg==
   cistilec.base.infrastructure:resourcegroup: rg-cistilec-dev
   cistilec.base.infrastructure:tags:
     contact: customer@cistilec.hr
