@@ -7,6 +7,7 @@ using Nuke.Common.Execution;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
+using Nuke.Common.Tools.Pulumi;
 using Nuke.Common.Utilities.Collections;
 using Serilog;
 using static Nuke.Common.EnvironmentInfo;
@@ -30,7 +31,9 @@ class Build : NukeBuild
     ///   - Microsoft VisualStudio     https://nuke.build/visualstudio
     ///   - Microsoft VSCode           https://nuke.build/vscode
 
-    public static int Main () => Execute<Build>(x => x.Print);
+    AbsolutePath InfrastructureDirectory => RootDirectory / "infrastructure" / "base" / "pulumi";
+
+    public static int Main () => Execute<Build>(x => x.ProvisionInfra);
 
     GitHubActions GitHubActions => GitHubActions.Instance;
 
@@ -59,6 +62,17 @@ class Build : NukeBuild
     {
         Log.Information("Branch = {Branch}", GitHubActions?.Ref ?? "Null");
         Log.Information("Commit = {Commit}", GitHubActions?.Sha ?? "Null");
+    });
+
+    Target ProvisionInfra => _ => _
+    .Description("Provision the infrastructure on Azure")
+    .Executes(() =>
+    {
+        PulumiTasks.PulumiUp(_ => _
+            .SetCwd(InfrastructureDirectory)
+            .SetStack("base-dev")
+            .EnableSkipPreview()
+            .EnableDebug());
     });
 
 }

@@ -14,6 +14,8 @@ public class StackConfiguration
 
     public string Environment => StackConfig.Require("environment");
 
+    public string ResourceGroup => StackConfig.Require("resourcegroup");
+
     public string Region => AzureStackConfig.Require("region");
 
     public Dictionary<string, string> Tags

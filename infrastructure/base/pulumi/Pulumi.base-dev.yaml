@@ -1,4 +1,5 @@
 config:
   cistilec.base.infrastructure:environment: dev
+  cistilec.base.infrastructure:resourcegroup: rg-cistilec-dev
   cistilec.base.infrastructure:tags:
     contact: customer@cistilec.hr
