@@ -73,8 +73,8 @@ class Build : NukeBuild
     {
         PulumiTasks.PulumiUp(_ => _
             .SetCwd(InfrastructureDirectory)
-            .SetStack("base-dev"));
-            //.EnableSkipPreview()
+            .SetStack("base-dev")
+            .EnableSkipPreview());
             //.EnableDebug());
     });
 
