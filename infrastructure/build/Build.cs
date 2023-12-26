@@ -71,7 +71,7 @@ class Build : NukeBuild
     .Description("Provision the infrastructure on Azure")
     .Executes(() =>
     {
-        PulumiTasks.PulumiUp(_ => _
+        PulumiTasks.PulumiDestroy(_ => _
             .SetCwd(InfrastructureDirectory)
             .SetStack("base-dev")
             .EnableSkipPreview());
