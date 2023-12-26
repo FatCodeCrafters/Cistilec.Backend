@@ -22,7 +22,8 @@ using static Nuke.Common.IO.PathConstruction;
     OnPullRequestBranches = new[] { "main" },
     OnWorkflowDispatchOptionalInputs = new string[] {},
     InvokedTargets = new[] { nameof(Compile) },
-    AutoGenerate = false)]
+    AutoGenerate = false,
+    ImportSecrets = new[] { nameof(PulumiAccessToken) })]
 class Build : NukeBuild
 {
     /// Support plugins are available for:
@@ -32,6 +33,8 @@ class Build : NukeBuild
     ///   - Microsoft VSCode           https://nuke.build/vscode
 
     AbsolutePath InfrastructureDirectory => RootDirectory / "infrastructure" / "base" / "pulumi";
+
+    [Parameter][Secret] readonly string PulumiAccessToken;
 
     public static int Main () => Execute<Build>(x => x.ProvisionInfra);
 
