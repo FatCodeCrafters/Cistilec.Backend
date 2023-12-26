@@ -40,6 +40,10 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Use latest Pulumi
+        uses: pulumi-contrib/setup-pulumi@v3
+        with:
+          pulumi-version: latest
       - uses: actions/checkout@v3
       - name: Set scripts permissions
         run: chmod +x ./build.sh ./build.cmd
